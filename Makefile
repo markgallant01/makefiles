@@ -1,11 +1,11 @@
 # compiler
-CC = g++
+CC = gcc
 
 # target files
-OBJS = *.cpp
+OBJS = *.c
 
 # compiler flags
-DEBUG_FLAGS = -Wall -Weffc++ -Wextra -Wconversion -Wsign-conversion \
+DEBUG_FLAGS = -Wall -Wextra -Wconversion -Wsign-conversion \
 	      -Werror -pedantic-errors -O0 -ggdb
 RELEASE_FLAGS = -w -O2 -DNDEBUG
 
@@ -13,7 +13,7 @@ RELEASE_FLAGS = -w -O2 -DNDEBUG
 LINKER_FLAGS =
 
 # standard specification
-STD = -std=c++23
+STD = -std=c23
 
 all : $(OBJS)
 	$(CC) $(STD) $(DEBUG_FLAGS) $(LINKER_FLAGS) -o debugExe $(OBJS)
